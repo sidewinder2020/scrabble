@@ -5,6 +5,8 @@ attr_accessor
     @point_values = point_values
   end
 
+
+    #pull value of letter from index
   def score(word)
     point_values_hash = point_values
     point_values(word)
@@ -23,16 +25,18 @@ attr_accessor
     }
   end
 
-  #pull value of letter from index
-
-  #multiply that value by the corresponding multiplier value
-  def multiply_word_with_letter_multiplier
-
+  #multiply that value by the corresponding multiplier value, do an enumerable to cycle through array applying multiplier to each in the array using map
+  def multiply_word_with_letter_multiplier(word,letter_multiplier)
+    local_array = score(word)
+    local_array.map do |number|
+      number * letter_multiplier
+    end
   end
 
-  #sum it up
+  #sum it up, set summed array to a plus equals of that array plus the next number in the array
   def sum
-
+    local_array = multiply_word_with_letter_multiplier
+    local_array.inject(:+)
   end
 
   #multiply that sum by the provided 3rd argument multiplier
