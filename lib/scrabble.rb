@@ -1,8 +1,15 @@
 class Scrabble
+attr_accessor
+
+  def initialize
+    @point_values = point_values
+  end
 
   def score(word)
-    1
+    point_values_hash = point_values
+    point_values(word)
   end
+  #need to order through the hash according to the assigned key in the point_values method hash
 
   def point_values
     {
@@ -14,5 +21,26 @@ class Scrabble
       "U"=>1, "V"=>4, "W"=>4, "X"=>8,
       "Y"=>4, "Z"=>10
     }
+  end
+
+  #pull value of letter from index
+
+  #multiply that value by the corresponding multiplier value
+  def multiply_word_with_letter_multiplier
+
+  end
+
+  #sum it up
+  def sum
+
+  end
+
+  #multiply that sum by the provided 3rd argument multiplier
+  def multiply_sum_by_3rd_argument
+
+  end
+
+  def score_with_multipliers(word, letter_multipliers, sum_multiplier)
+
   end
 end

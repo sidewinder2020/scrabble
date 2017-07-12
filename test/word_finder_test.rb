@@ -6,4 +6,9 @@ require 'pry'
 
 class WordFinderTest < Minitest::Test
 
+  def setup
+    
+  end
+
+
 end
